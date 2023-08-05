@@ -1,66 +1,59 @@
-// var solution=0;
-// var v1=0,v2=0;
-// var operator;
-// function input(i){
-//     if (i === "cls"){
-//         document.querySelector("#display").innerText= "" ;
-//     }
-//     //pushing input on h1 tag
-//   //--------------------------------------  
-//     if( 0<=i && i<=9){
-//     addLetter(i);
-//    }
-// function addLetter(i){
-//     const heading = document.getElementById('display');
-//     const text = heading.innerText;
-//     const letterToAdd = i;
-//     heading.innerText = text + letterToAdd;
-//   }
-//   //--------------------------------------
-//   // if select operator 
-//  //--------------------------------------- 
-//  switch (i) {
-//     case '+':
-//         operator = '+';
-//         v1 =document.getElementById('display').innerText;
-//         document.getElementById('display').innerText='';
-//         break;
-//     case '-':
-//         operator = '-';
-//         v1 =document.getElementById('display').innerText;
-//         document.getElementById('display').innerText='';
-//         break;
-//     case '*':
-//         operator = '*';
-//         v1 =document.getElementById('display').innerText;
-//         document.getElementById('display').innerText='';
-//         break;   
-//     case '/':
-//         operator = '/';
-//         v1 =document.getElementById('display').innerText;
-//         document.getElementById('display').innerText='';
-//         break;     
-//     case '=':
-//         v2 =document.getElementById('display').innerText;
-//         solution =add(operator,v1,v2);
-//         document.getElementById('display').innerText=solution;
-//         solution= 0;
-//         v1=0;
-//         v2=0;
-//  }
+let expression = '' ;
+let ans='';
+function clearPromt(){
+    expression ='';
+    ans = '';
+    document.querySelector("#display").innerText= expression;
+}
+function addNum(value){
+  if(ans !== ''){
+    document.querySelector("#display").innerText="error";
+   }else{
+      expression+=value; 
+    document.querySelector("#display").innerText= expression;
+   }
+          
+}
+function addOperator(value){
+    if(expression[expression.length-1] == '+' || 
+       expression[expression.length-1] == '-'||
+       expression[expression.length-1] == '*' ||
+       expression[expression.length-1] == '/' ||
+       expression[expression.length-1] == '%' ||
+       expression[expression.length-1] == '.'){
+      
+        expression = expression.slice(0, expression.length-1);
+        expression+=value;
+   
+    }else{
 
-// }
-//   function add(operator, num1, num2) {
-//     switch (operator) {
-//       case '+':
-//         return parseInt(num1) + parseInt(num2);
-//       case '-':
-//         return num1 - num2;
-//       case '*':
-//         return num1 * num2;
-//       case '/':
-//         return num1 / num2;
-//     }
-//   }
-  
-  
+      expression+=value;        
+    }
+    if(ans !==''){
+           expression=ans+expression[expression.length-1];
+ans='';
+    }
+     document.querySelector("#display").innerText= expression;
+     
+}
+
+function result(){
+    try{
+      ans='';
+  ans= eval(expression);
+  document.querySelector("#display").innerText=ans;
+ 
+    }
+    catch(error){
+           console.log(error);
+           document.querySelector("#display").innerText="error";
+    }
+}
+function backSpace(){
+  if(expression === ''){
+    document.querySelector("#display").innerText="Not value Entered";
+  }else{
+    expression = expression.slice(0, expression.length-1);
+    document.querySelector("#display").innerText= expression;
+  }
+}

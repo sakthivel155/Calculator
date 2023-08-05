@@ -8,7 +8,7 @@ body{
 }
 body>h1{
     font-size:50px;
-    color:aliceblue;
+    color:rgb(240, 248, 255);
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     margin-top: 50px;
@@ -26,47 +26,50 @@ body>h1{
 .item{
     height: 400px;
     width: 350px;
-    background-color:rgba(85, 79, 79, 0.8);
-    border-radius:20px;
+    background-color:rgba(85, 79, 79, 0.863);
+    border-radius:10px;
 
 }
 .label{
+    display: flex;
     margin-top:30px;
     margin-left: 15px;
     height: 40px;
     width:90%;
     border-radius: 5px;
-    background-color: #ffffff96;
+    background-color: #c2c4b7;
 }
-.label>h1{
+#display{
+    width:100%;
     margin:5px;
     display: inline;
-    color: rgb(0, 0, 0);
+    color: #000000;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 .container1{
     display: inline-block;
+    width:100%;
 }
 .grid{
-    margin-top:35px;
+    margin-top:30px;
     margin-left:20px ;
-    width: 230px;
     display: grid;
-    
-    grid-template-columns: 1fr 1fr 1fr ;
-    gap:10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap:20px;
 }
 .btn{
-    background-color: #afa69d;
-    height:35px;
-    width: 55px;
-    border-radius:50%;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    padding-top: 20px;
+    background-color: #c2c4b7;
+    height:40px;
+    width: 60px;
+    border-radius:7px;
+    font-family: 'Courier New', Courier, monospace;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .btn:hover{
-    background-color: #b04ebd;
+    background-color: #df8927d7;
     color:aliceblue;
     transition:color 0.4s;
     transition:background-color 0.4s;
@@ -78,13 +81,10 @@ body>h1{
     color:#000000;
     transition: color 0.2s;
 }
-.flex{
-    margin-top:35px;
-    margin-right:25px ;
-    float: right;
-   display: flex;
-   gap:10px;
-   flex-direction: column;
-   width: 66px;
+.backspace_btn{
+    margin-top: 3px;
+    width:20px;
 }
-
+p{
+    display: inline;
+}
