@@ -88,3 +88,10 @@ body>h1{
 p{
     display: inline;
 }
+.Brackets{
+    display:flex;
+    column-gap: 5px;
+}
+.openBracket,.closeBracket{
+    width: 30px;
+}
